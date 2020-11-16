@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxxx.server.mapper.EmployeeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxxx.server.pojo.Employee">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="gender" property="gender" />
+        <result column="birthday" property="birthday" />
+        <result column="idCard" property="idCard" />
+        <result column="wedlock" property="wedlock" />
+        <result column="nationId" property="nationId" />
+        <result column="nativePlace" property="nativePlace" />
+        <result column="politicId" property="politicId" />
+        <result column="email" property="email" />
+        <result column="phone" property="phone" />
+        <result column="address" property="address" />
+        <result column="departmentId" property="departmentId" />
+        <result column="jobLevelId" property="jobLevelId" />
+        <result column="posId" property="posId" />
+        <result column="engageForm" property="engageForm" />
+        <result column="tiptopDegree" property="tiptopDegree" />
+        <result column="specialty" property="specialty" />
+        <result column="school" property="school" />
+        <result column="beginDate" property="beginDate" />
+        <result column="workState" property="workState" />
+        <result column="workID" property="workID" />
+        <result column="contractTerm" property="contractTerm" />
+        <result column="conversionTime" property="conversionTime" />
+        <result column="notWorkDate" property="notWorkDate" />
+        <result column="beginContract" property="beginContract" />
+        <result column="endContract" property="endContract" />
+        <result column="workAge" property="workAge" />
+        <result column="salaryId" property="salaryId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, gender, birthday, idCard, wedlock, nationId, nativePlace, politicId, email, phone, address, departmentId, jobLevelId, posId, engageForm, tiptopDegree, specialty, school, beginDate, workState, workID, contractTerm, conversionTime, notWorkDate, beginContract, endContract, workAge, salaryId
+    </sql>
+
+</mapper>

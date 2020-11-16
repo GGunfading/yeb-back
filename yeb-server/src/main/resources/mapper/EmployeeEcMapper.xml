@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxxx.server.mapper.EmployeeEcMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxxx.server.pojo.EmployeeEc">
+        <id column="id" property="id" />
+        <result column="eid" property="eid" />
+        <result column="ecDate" property="ecDate" />
+        <result column="ecReason" property="ecReason" />
+        <result column="ecPoint" property="ecPoint" />
+        <result column="ecType" property="ecType" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, eid, ecDate, ecReason, ecPoint, ecType, remark
+    </sql>
+
+</mapper>

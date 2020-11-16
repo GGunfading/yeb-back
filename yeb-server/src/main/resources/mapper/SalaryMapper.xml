@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxxx.server.mapper.SalaryMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxxx.server.pojo.Salary">
+        <id column="id" property="id" />
+        <result column="basicSalary" property="basicSalary" />
+        <result column="bonus" property="bonus" />
+        <result column="lunchSalary" property="lunchSalary" />
+        <result column="trafficSalary" property="trafficSalary" />
+        <result column="allSalary" property="allSalary" />
+        <result column="pensionBase" property="pensionBase" />
+        <result column="pensionPer" property="pensionPer" />
+        <result column="createDate" property="createDate" />
+        <result column="medicalBase" property="medicalBase" />
+        <result column="medicalPer" property="medicalPer" />
+        <result column="accumulationFundBase" property="accumulationFundBase" />
+        <result column="accumulationFundPer" property="accumulationFundPer" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, basicSalary, bonus, lunchSalary, trafficSalary, allSalary, pensionBase, pensionPer, createDate, medicalBase, medicalPer, accumulationFundBase, accumulationFundPer, name
+    </sql>
+
+</mapper>

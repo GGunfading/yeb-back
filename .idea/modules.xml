@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/yeb-back.iml" filepath="$PROJECT_DIR$/yeb-back.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yeb-generator/yeb-generator.iml" filepath="$PROJECT_DIR$/yeb-generator/yeb-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yeb-server/yeb-server.iml" filepath="$PROJECT_DIR$/yeb-server/yeb-server.iml" />
+    </modules>
+  </component>
+</project>
