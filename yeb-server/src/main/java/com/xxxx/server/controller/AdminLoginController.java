@@ -43,7 +43,7 @@ public class AdminLoginController {
         }
         String username = principal.getName();
         Admin admin = adminService.getAdminByUserName(username);
-        System.out.println("admin = " + admin);
+        //System.out.println("admin = " + admin);
         admin.setPassword(null);
         admin.setRoles(adminService.getRolesByAdminId(admin.getId()));
         return admin;

@@ -31,4 +31,11 @@ public interface IAdminService extends IService<Admin> {
      * @return
      */
     List<Role> getRolesByAdminId(Integer adminId);
+
+    /**
+     * 获取所有操作员
+     * @param keywords
+     * @return
+     */
+    List<Admin> getAllAdmins(String keywords);
 }
