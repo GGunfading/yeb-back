@@ -92,6 +92,16 @@
             <artifactId>commons-pool2</artifactId>
         </dependency>
 
+        <!--导数导入数据 依赖-->
+        <!--easy poi-->
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-spring-boot-starter</artifactId>
+            <version>4.1.3</version>
+        </dependency>
+
+
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
