@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxxx.server.mapper.AppraiseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxxx.server.pojo.Appraise">
+        <id column="id" property="id" />
+        <result column="eid" property="eid" />
+        <result column="appDate" property="appDate" />
+        <result column="appResult" property="appResult" />
+        <result column="appContent" property="appContent" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, eid, appDate, appResult, appContent, remark
+    </sql>
+
+</mapper>

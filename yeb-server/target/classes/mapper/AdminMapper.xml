@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxxx.server.mapper.AdminMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xxxx.server.pojo.Admin">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="phone" property="phone" />
+        <result column="telephone" property="telephone" />
+        <result column="address" property="address" />
+        <result column="enabled" property="enabled" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="userFace" property="userFace" />
+        <result column="remark" property="remark" />
+    </resultMap>
+    <resultMap id="AdminWithRole" type="com.xxxx.server.pojo.Admin" extends="BaseResultMap">
+        <collection property="roles" ofType="com.xxxx.server.pojo.Role">
+            <id column="rid" property="id" />
+            <result column="rname" property="name" />
+            <result column="rnameZh" property="nameZh" />
+        </collection>
+    </resultMap>
+
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, phone, telephone, address, enabled, username, password, userFace, remark
+    </sql>
+
+    <!--获取所有操作员-->
+    <select id="getAllAdmins" resultMap="AdminWithRole">
+        select
+           a.id,
+           a.enabled,
+           a.name,
+           a.address,
+           a.phone,
+           a.remark,
+           a.telephone,
+           a.userFace,
+           a.username,
+           r.id as rid,
+           r.name as rname,
+           r.nameZh as rnameZh
+        from
+             t_admin as a
+            LEFT JOIN t_admin_role as ar on a.id = ar.adminId
+            LEFT JOIN t_role as r on ar.rid = r.id
+        where a.id != #{id}
+        <if test="null != keywords and '' != keywords">
+            and a.name like concat('%',#{keywords},'%')
+        </if>
+        order by
+        a.id
+    </select>
+
+</mapper>

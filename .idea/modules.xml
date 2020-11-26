@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/yeb-back.iml" filepath="$PROJECT_DIR$/yeb-back.iml" />
       <module fileurl="file://$PROJECT_DIR$/yeb-generator/yeb-generator.iml" filepath="$PROJECT_DIR$/yeb-generator/yeb-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yeb-mail/yeb-mail.iml" filepath="$PROJECT_DIR$/yeb-mail/yeb-mail.iml" />
       <module fileurl="file://$PROJECT_DIR$/yeb-server/yeb-server.iml" filepath="$PROJECT_DIR$/yeb-server/yeb-server.iml" />
     </modules>
   </component>

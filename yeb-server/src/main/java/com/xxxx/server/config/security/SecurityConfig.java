@@ -10,6 +10,7 @@ import com.xxxx.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -45,14 +46,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
-                "/login", "/logout",
+                "/login",
+                "/logout",
+                "/ws/**",
                 "/css/**",
                 "/js/**",
                 "/index.html",
                 "favicon.ico",
                 "/doc.html",
                 "/webjars/**",
-                "/swagger-resources/**", "/v2/api-docs/**",
+                "/swagger-resources/**",
+                "/v2/api-docs/**",
                 "/captcha"
         );
     }
@@ -65,6 +69,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
+                //.antMatchers(HttpMethod.OPTIONS) //跨域请求先进行一次options请求
+                //.permitAll()
                 //需要认证
                 .anyRequest()
                 .authenticated()

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.xxxx.server.pojo.Admin;
 import com.xxxx.server.pojo.RespBean;
 import com.xxxx.server.pojo.Role;
+import org.springframework.security.core.Authentication;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -46,4 +47,22 @@ public interface IAdminService extends IService<Admin> {
      * @return
      */
     RespBean updateAdminRole(Integer adminId,Integer[] rids);
+
+    /**
+     * 更新用户密码
+     * @param oldPass
+     * @param pass
+     * @param adminId
+     * @return
+     */
+    RespBean updatePassword(String oldPass,String pass,Integer adminId);
+
+    /**
+     * 更新用户头像
+     * @param url
+     * @param id
+     * @param authentication
+     * @return
+     */
+    RespBean updateAdminUserFace(String url, Integer id, Authentication authentication);
 }

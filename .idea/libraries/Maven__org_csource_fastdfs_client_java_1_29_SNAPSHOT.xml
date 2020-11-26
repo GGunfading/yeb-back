@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.csource:fastdfs-client-java:1.29-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/csource/fastdfs-client-java/1.29-SNAPSHOT/fastdfs-client-java-1.29-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/csource/fastdfs-client-java/1.29-SNAPSHOT/fastdfs-client-java-1.29-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/csource/fastdfs-client-java/1.29-SNAPSHOT/fastdfs-client-java-1.29-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

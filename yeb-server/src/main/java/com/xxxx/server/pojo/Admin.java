@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.xxxx.server.config.CustomAuthorityDeserializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
@@ -22,7 +24,7 @@ import java.util.stream.Collectors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhanglishen
@@ -31,8 +33,8 @@ import java.util.stream.Collectors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_admin")
-@ApiModel(value="Admin对象", description="")
-public class Admin implements Serializable , UserDetails {
+@ApiModel(value = "Admin对象", description = "")
+public class Admin implements Serializable, UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -74,11 +76,12 @@ public class Admin implements Serializable , UserDetails {
 
 
     @Override
+    @JsonDeserialize(using = CustomAuthorityDeserializer.class)
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities =
                 roles.stream()
-                    .map(role -> new SimpleGrantedAuthority(role.getName()))
-                .collect(Collectors.toList());
+                        .map(role -> new SimpleGrantedAuthority(role.getName()))
+                        .collect(Collectors.toList());
         return authorities;
     }
 
