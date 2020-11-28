@@ -12,7 +12,7 @@
         <el-input size="normal" type="text" v-model="ruleForm.code"
                   auto-complete="false"
                   placeholder="点击图片更换验证码" style="width:250px;margin-right: 5px"></el-input>
-        <img :src="captchaUrl" @click="updateCaptcha" />
+        <img :src="captchaUrl" @click="updateCaptcha"/>
       </el-form-item>
       <!--<el-checkbox class="loginRemember" v-model="checked">记住我</el-checkbox>-->
       <el-button type="primary" style="width: 100%" @click="submitLogin">登录</el-button>
@@ -59,9 +59,13 @@
               if (resp) {
                 //alert(JSON.stringify(resp));
                 //存储用户token
-                const tokenStr = resp.obj.tokenHead+resp.obj.token;
+                const tokenStr = resp.obj.tokenHead + resp.obj.token;
                 window.sessionStorage.setItem('tokenStr', tokenStr);
-                this.$router.replace('/home')
+                //清空菜单
+                this.$store.commit('initRoutes', []);
+                //页面跳转
+                let path = this.$route.query.redirect;
+                this.$router.replace((path == '/' || path == undefined) ? '/home' : path)
               }
             })
           } else {
