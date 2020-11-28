@@ -58,6 +58,9 @@
             postRequest('/login', this.ruleForm).then(resp => {
               if (resp) {
                 //alert(JSON.stringify(resp));
+                //存储用户token
+                const tokenStr = resp.obj.tokenHead+resp.obj.token;
+                window.sessionStorage.setItem('tokenStr', tokenStr);
                 this.$router.replace('/home')
               }
             })
