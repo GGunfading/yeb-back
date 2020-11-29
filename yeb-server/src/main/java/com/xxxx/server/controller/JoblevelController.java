@@ -46,10 +46,12 @@ public class JoblevelController {
     @ApiOperation(value = "修改职称")
     @PutMapping("/")
     public RespBean updateJoblevel(@RequestBody Joblevel joblevel){
+        System.out.println(joblevel);
         if (joblevelService.updateById(joblevel)){
             return RespBean.success("修改成功");
         }
         return RespBean.error("修改失败");
+
     }
 
     @ApiOperation(value = "删除职称")

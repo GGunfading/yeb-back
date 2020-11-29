@@ -45,7 +45,7 @@ public class Joblevel implements Serializable {
     private String titleLevel;
 
     @ApiModelProperty(value = "创建时间")
-    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Shanghai")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime createDate;
 
     @ApiModelProperty(value = "是否启用")
