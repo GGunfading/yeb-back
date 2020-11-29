@@ -117,13 +117,13 @@
                 AND e.name like concat('%',#{employee.name},'%')
             </if>
             <if test="employee.politicId != null">
-                AND e.poloticId = #{employee.politicId}
+                AND e.politicId = #{employee.politicId}
             </if>
             <if test="employee.nationId != null">
                 AND e.nationId = #{employee.nationId}
             </if>
-            <if test="employee.joblevelId != null">
-                AND e.joblevelId = #{employee.joblevelId}
+            <if test="employee.jobLevelId != null">
+                AND e.jobLevelId = #{employee.jobLevelId}
             </if>
             <if test="employee.posId != null" >
                 AND e.posId = #{employee.posId}
