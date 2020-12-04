@@ -32,8 +32,10 @@ router.beforeEach((to, from, next) => {
     if (!window.sessionStorage.getItem("user")) {
       return getRequest('/admin/info').then(resp => {
         if (resp) {
+          alert(resp);
           //存入用户信息
           window.sessionStorage.setItem("user", JSON.stringify(resp));
+          store.commit('INIT_CURRENTAdmin',resp);
           next();
         }
       });
@@ -43,7 +45,7 @@ router.beforeEach((to, from, next) => {
     if (to.path == '/') {
       next();
     } else {
-      next('/?redirect=' + to.path)
+      next('/?redirect=' + to.path);
     }
   }
 })

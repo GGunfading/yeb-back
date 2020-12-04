@@ -6,12 +6,14 @@ export const initMenu = (router, store) => {
   }
   getRequest("/system/cfg/menu").then(data => {
     if (data) {
-//格式化router
+      //格式化router
       let fmtRoutes = formatRoutes(data);
-//添加到router
+      //添加到router
       router.addRoutes(fmtRoutes);
-//将数据存入vuex
+      //将数据存入vuex
       store.commit('initRoutes', fmtRoutes);
+      //连接websocket
+      store.dispatch('connect');
     }
   })
 }
